@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import {Line, Pie} from 'react-chartjs-2';
 
-class Chart extends Component{
+class AvgChart extends Component{
     constructor(props){
         super(props);
         this.state = {
             chartData: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Month1','Month2','Month3','Month4','Month5','Month6'],
                 datasets: [{
                     label: '# of Votes',
                     data: [12, 19, 3, 5, 2, 3],
@@ -35,7 +35,7 @@ class Chart extends Component{
     render(){
         return (
             <div className="chart">
-                <Bar
+                <Line
 	            data={this.state.chartData}
 	            width={400}
 	            height={400}
@@ -55,4 +55,4 @@ class Chart extends Component{
 
 }
 
-export default Chart;
+export default AvgChart;
