@@ -21,7 +21,7 @@ class Table extends React.Component{
         rx_types: ["NRx", "TRx"],
         rx_type: "NRx",
         
-        chartData: []
+        chartData: [1,2,3,4,5,6]
     };
 
     this.handleDatasetChange = this.handleDatasetChange.bind(this);
