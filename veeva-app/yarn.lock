@@ -3337,6 +3337,11 @@
   "resolved" "https://registry.npmjs.org/chart.js/-/chart.js-3.6.0.tgz"
   "version" "3.6.0"
 
+"chartjs-plugin-trendline@^1.0.0":
+  "integrity" "sha512-gQQ4mQoFrxcZ41412bb3NP2PTRAyS6ypLzdtFjEgVLZ2zeuTB1ot10g9c9NOQWItl9FhT3HQezkp7TyOS2ChwA=="
+  "resolved" "https://registry.npmjs.org/chartjs-plugin-trendline/-/chartjs-plugin-trendline-1.0.0.tgz"
+  "version" "1.0.0"
+
 "check-types@^11.1.1":
   "integrity" "sha512-tzWzvgePgLORb9/3a0YenggReLKAIb2owL03H2Xdoe5pKcUyWRSEQ8xfCar8t2SIAuEDwtmx2da1YB52YuHQMQ=="
   "resolved" "https://registry.npmjs.org/check-types/-/check-types-11.1.2.tgz"

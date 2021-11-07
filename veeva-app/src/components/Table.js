@@ -1,7 +1,8 @@
 import React from "react";
 import Papa from 'papaparse';
 import AvgChart from './AvgChart';
-import Line from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2'
+
 
 class Table extends React.Component{
   constructor(props){
@@ -21,7 +22,8 @@ class Table extends React.Component{
         rx_types: ["NRx", "TRx"],
         rx_type: "NRx",
         
-        chartData: [1,2,3,4,5,6]
+        chartData: [1,2,3,4,5,6],
+        avgChartData: [1,2,3,4,5,6]
     };
 
     this.handleDatasetChange = this.handleDatasetChange.bind(this);
@@ -142,6 +144,18 @@ class Table extends React.Component{
       }
     }).then( () => {
       this.setState({ chartData: newChartData });
+      var avg = new Array(6).fill(0);
+      for (let row of newChartData){
+        for (let i = 0; i < 6; i++){
+          avg[i] += parseInt(row[0][i]);
+        }
+      }
+      if (newChartData.length > 0){
+        for (let i = 0; i < 6; i++){
+          avg[i] /= newChartData.length;
+        }
+      }
+      this.setState({ avgChartData: avg});
     });
   }
 
@@ -189,7 +203,45 @@ class Table extends React.Component{
           {renderRXtypes}
         </select>
       </label>
-      <AvgChart data={this.state.chartData}/>
+      <div className="chart">
+        <Line
+	        data={{
+            labels: ['Month1','Month2','Month3','Month4','Month5','Month6'],
+            datasets: [{
+                label: '# of Votes',
+                data: this.state.avgChartData,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1,
+            }]
+          }}
+	         width={400}
+	         height={400}
+	         options={{ 
+                 maintainAspectRatio: false,
+                 title: {
+                     display: true,
+                     text: 'Number of Votes',
+                     fontSize: 25
+                 },
+
+                 }}
+             />
+         </div>
     </div>
     );
   }
