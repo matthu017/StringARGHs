@@ -3,6 +3,11 @@ import Papa from 'papaparse';
 import AvgChart from './AvgChart';
 import {Line} from 'react-chartjs-2'
 
+import { Chart } from 'chart.js';
+import annotationPlugin from 'chartjs-plugin-annotation';
+import chartTrendline from "chartjs-plugin-trendline";
+Chart.register(annotationPlugin);
+Chart.register(chartTrendline);
 
 class Table extends React.Component{
   constructor(props){
@@ -227,6 +232,11 @@ class Table extends React.Component{
                     'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 1,
+                trendlineLinear: {
+                  style: "rgba(255,105,180, .8)",
+                  lineStyle: "dotted|solid",
+                  width: 2
+                }
             }]
           }}
 	         width={400}

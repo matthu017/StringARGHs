@@ -28,12 +28,22 @@ class AvgChart extends Component{
 	            width={400}
 	            height={400}
 	            options={{ 
-                    maintainAspectRatio: false,
-                    title: {
-                        display: true,
-                        text: 'Number of Votes',
-                        fontSize: 25
-                    },
+                    annotation: {
+                        annotations: [{
+                          type: 'line',
+                          mode: 'horizontal',
+                          scaleID: 'y-axis-0',
+                          value: 2225,
+                          endValue: 0,
+                          borderColor: 'rgb(75, 192, 192)',
+                          borderWidth: 4,
+                          label: {
+                            enabled: true,
+                            content: 'Trendline',
+                            yAdjust: -16,
+                          }
+                        }]
+                      }
                     }}
                 />
             </div>

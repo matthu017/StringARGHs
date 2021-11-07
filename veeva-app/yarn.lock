@@ -3332,10 +3332,15 @@
   "resolved" "https://registry.npmjs.org/char-regex/-/char-regex-1.0.2.tgz"
   "version" "1.0.2"
 
-"chart.js@^3.5.0", "chart.js@^3.6.0":
+"chart.js@^3.0.1", "chart.js@^3.5.0", "chart.js@^3.6.0":
   "integrity" "sha512-iOzzDKePL+bj+ccIsVAgWQehCXv8xOKGbaU2fO/myivH736zcx535PGJzQGanvcSGVOqX6yuLZsN3ygcQ35UgQ=="
   "resolved" "https://registry.npmjs.org/chart.js/-/chart.js-3.6.0.tgz"
   "version" "3.6.0"
+
+"chartjs-plugin-annotation@^1.0.2":
+  "integrity" "sha512-asqP2/B+9tv105e3rwkzqoIgzhDBQRMzFRh/0ZTKqormxDXMP68uzxI5t3Fx8bxZSMNeEph0sY+0GIXXU0PeBQ=="
+  "resolved" "https://registry.npmjs.org/chartjs-plugin-annotation/-/chartjs-plugin-annotation-1.0.2.tgz"
+  "version" "1.0.2"
 
 "chartjs-plugin-trendline@^1.0.0":
   "integrity" "sha512-gQQ4mQoFrxcZ41412bb3NP2PTRAyS6ypLzdtFjEgVLZ2zeuTB1ot10g9c9NOQWItl9FhT3HQezkp7TyOS2ChwA=="

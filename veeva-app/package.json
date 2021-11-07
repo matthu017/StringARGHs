@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "chart.js": "^3.6.0",
+    "chartjs-plugin-annotation": "^1.0.2",
     "chartjs-plugin-trendline": "^1.0.0",
     "csv": "^5.5.3",
     "papaparse": "^5.3.1",
