@@ -1,6 +1,7 @@
 import React from "react";
 import Papa from 'papaparse';
 import AvgChart from './AvgChart';
+import Line from 'react-chartjs-2';
 
 class Table extends React.Component{
   constructor(props){
@@ -139,9 +140,9 @@ class Table extends React.Component{
           newChartData.push(rx);
         }
       }
+    }).then( () => {
+      this.setState({ chartData: newChartData });
     });
-    this.state.chartData = newChartData
-    console.log(newChartData)
   }
 
   render(){
@@ -188,7 +189,7 @@ class Table extends React.Component{
           {renderRXtypes}
         </select>
       </label>
-      <AvgChart data={this.chartData}/>
+      <AvgChart data={this.state.chartData}/>
     </div>
     );
   }
