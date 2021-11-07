@@ -7,8 +7,6 @@ class Dropdown extends React.Component {
     this.handleChange = props.onChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
-    console.log(props);
-
     this.state = {
       category: props.category,
       values: props.values,
