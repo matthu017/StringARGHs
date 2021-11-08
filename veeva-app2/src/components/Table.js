@@ -27,7 +27,8 @@ class Table extends React.Component{
         numVal: 25,
         
         chartData: [],
-        metricData: [1,2,3,4,5,6]
+        metricData: [1,2,3,4,5,6],
+        metricAverage: 0
     };
 
     this.handleDatasetChange = this.handleDatasetChange.bind(this);
@@ -116,6 +117,7 @@ class Table extends React.Component{
     
     var chartData = [];
     var metricData = [];
+    var metricAverage = 0;
     Promise.resolve(dataSet).then(function(value) {
       var tableData = new Array();
       var sortingIndex = 20;
@@ -128,11 +130,15 @@ class Table extends React.Component{
       } else {
         sortingIndex = 21;
       }
+      let count = 0
       for (let row of value){
         if(row[5] === med){
           tableData.push(row);
+          metricAverage += parseFloat(row[sortingIndex]);
+          count += 1;
         }
       }
+      metricAverage = metricAverage/count;
 
       tableData.sort( function(a, b) {
         let fA = parseFloat(a[sortingIndex]);
@@ -154,6 +160,7 @@ class Table extends React.Component{
     }).then( () => {
       metricData.reverse();
       this.setState({ chartData: chartData })
+      this.setState({ metricAverage: metricAverage})
       let low = parseFloat(metricData[0]);
       let high = parseFloat(metricData[nv-1]);
       let mid = (low + high) / 2
@@ -288,6 +295,9 @@ class Table extends React.Component{
              options={{
                  }}
              />
+      </div>
+      <div>
+        <h2>{this.state.metric} Average: {this.state.metricAverage}</h2>
       </div>
       <div>
         <table>

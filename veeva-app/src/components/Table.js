@@ -213,7 +213,6 @@ class Table extends React.Component{
 	        data={{
             labels: ['Month1','Month2','Month3','Month4','Month5','Month6'],
             datasets: [{
-                label: '# of Votes',
                 data: this.state.avgChartData,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
